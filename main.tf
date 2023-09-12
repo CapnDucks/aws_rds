@@ -17,6 +17,7 @@ resource "aws_db_instance" "this" {
   vpc_security_group_ids = [var.db_vpc_security_group_ids]
   db_subnet_group_name   = var.db_subnet_group_name
   multi_az               = var.db_multi_az
+  ca_cert_identifier     = var.ca_cert_identifier
 
   maintenance_window        = "sat:09:13-sat:10:43"
   backup_window             = "05:53-07:23"
