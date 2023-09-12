@@ -62,3 +62,9 @@ variable "ca_cert_identifier" {
   description = "The certificate authority (CA) that signs the DB server certificate, for your database."
   type        = string
 }
+
+variable "apply_immediately" {
+  default     = false
+  description = "Specifies whether any database modifications are applied immediately, or during the next maintenance window. Default is false."
+  type        = bool
+}
