@@ -5,6 +5,7 @@ module "secret" {
 }
 
 resource "aws_db_instance" "this" {
+  apply_immediately      = var.apply_immediately
   identifier_prefix      = var.db_identifier_prefix
   allocated_storage      = var.db_allocated_storage
   storage_encrypted      = true
