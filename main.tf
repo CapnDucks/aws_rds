@@ -1,6 +1,5 @@
 module "secret" {
-  source = "../secret"
-#  source = "git::https://github.com/CapnDucks/aws_secret?ref=v1.0.0"
+  source = "git::https://github.com/CapnDucks/aws_secret?ref=v1.0.0"
 
   secrets_manager_secret = var.secretsmanager_secret
 }
