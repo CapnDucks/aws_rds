@@ -26,5 +26,5 @@ resource "aws_db_instance" "this" {
 
   db_name  = var.db_name
   username = var.db_user
-  password = module.secret.unencrypted_password_result
+  password = module.secret.random_password_result
 }
