@@ -16,7 +16,7 @@ jobs:
         ref: ${{ github.event.pull_request.head.ref }}
 
     - name: Render terraform docs inside the documentation.md and push changes back to PR branch
-      uses: actions/terraform-docs@main
+      uses: terraform-docs/gh-actions@v1.0.0
       with:
         working-dir: .
         output-file: documentation.md
