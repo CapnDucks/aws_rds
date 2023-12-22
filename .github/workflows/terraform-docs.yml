@@ -1,0 +1,25 @@
+name: Generate terraform docs
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+      - 'release/**'  
+  workflow_dispatch:
+
+jobs:
+  terraform-docs:
+    runs-on: [ ubuntu-latest ]
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.pull_request.head.ref }}
+
+    - name: Render terraform docs inside the documentation.md and push changes back to PR branch
+      uses: actions/terraform-docs@main
+      with:
+        working-dir: .
+        output-file: documentation.md
+        output-method: inject
+        git-push: "true"
+        template: "<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->\n{{ .Content }}\n<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->"
