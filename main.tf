@@ -1,6 +1,8 @@
 module "secret" {
-  source = "git::https://github.com/CapnDucks/aws_secret?ref=v1.0.0"
+  source = "../secret"
+  #source = "git::https://github.com/CapnDucks/aws_secret?ref=v1.0.0"
 
+  db_admin_user          = var.db_admin_user
   secrets_manager_secret = var.secretsmanager_secret
 }
 
@@ -27,6 +29,6 @@ resource "aws_db_instance" "this" {
   copy_tags_to_snapshot     = true
 
   db_name  = var.db_name
-  username = var.db_user
+  username = module.secret.db_admin_user
   password = module.secret.random_password_result
 }

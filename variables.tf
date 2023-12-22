@@ -1,15 +1,15 @@
 variable "secretsmanager_secret" {
-  description = "Name of tyeh secret (not the value)"
+  description = "Name of the secret (not the value)."
   type        = string
 }
 
 variable "db_name_prefix" {
-  description = "Database name prefix (conflicts with db_name)"
+  description = "Database name prefix (conflicts with db_name)."
   type        = string
 }
 
 variable "db_identifier_prefix" {
-  description = "Database identifier prefix"
+  description = "Database identifier prefix."
   type        = string
 }
 
@@ -17,8 +17,12 @@ variable "db_allocated_storage" {
   default = 10
 }
 
+variable "db_max_allocated_storage" {
+  default = null
+}
+
 variable "db_storage_type" {
-  default = "gp2"
+  default = "gp3"
 }
 
 variable "db_engine" {}
@@ -29,7 +33,9 @@ variable "db_instance_class" {
   default = "db.t3.micro"
 }
 
-variable "db_parameter_group_name" {}
+variable "db_parameter_group_name" {
+  default = null
+}
 
 variable "db_deletion_protection" {
   default = false
@@ -53,7 +59,7 @@ variable "db_name" {}
 
 variable "db_final_snapshot_identifier" {}
 
-variable "db_user" {}
+variable "db_admin_user" {}
 
 variable "vpc_name" {}
 
