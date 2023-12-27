@@ -27,9 +27,10 @@ resource "aws_db_instance" "this" {
   password = module.secret.random_password_result
 
   tags = merge(
-    local.tags,
     {
-      Name = var.db_name
-    }
+      "module"    = "https://git.renaissance.com/tfmodules/s3-bucket.git"
+      "terraform" = "true"
+    },
+      local.tags,
   )
 }

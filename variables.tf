@@ -5,7 +5,7 @@ variable "secretsmanager_secret" {
 }
 
 variable "db_identifier_prefix" {
-  default     = null
+  default     = "db-"
   description = "Database identifier prefix."
   type        = string
 }
@@ -41,7 +41,8 @@ variable "db_engine_version" {
 }
 
 variable "db_instance_class" {
-  default = null
+  default = "db.t3.micro"
+  description = ""
   type    = string
 }
 
@@ -70,7 +71,7 @@ variable "db_multi_az" {
 }
 
 variable "db_vpc_security_group_ids" {
-  default     = null
+  default     = ""
   description = ""
   type        = string
 
@@ -89,13 +90,13 @@ variable "db_name" {
 }
 
 variable "db_final_snapshot_identifier" {
-  default     = null
+  default     = "final-snapshot"
   description = ""
   type        = string
 }
 
 variable "db_admin_user" {
-  default     = null
+  default     = "sa"
   description = ""
   type        = string
 }
