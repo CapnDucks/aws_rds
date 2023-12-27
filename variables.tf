@@ -100,12 +100,6 @@ variable "db_admin_user" {
   type        = string
 }
 
-variable "vpc_name" {
-  default     = null
-  description = ""
-  type        = string
-}
-
 variable "ca_cert_identifier" {
   default     = "rds-ca-rsa2048-g1"
   description = "The certificate authority (CA) that signs the DB server certificate, for your database."
