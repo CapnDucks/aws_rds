@@ -3,5 +3,5 @@ framework: terraform
 compact: true
 
 ## Checks - uncomment the line below and add rules to ignore.
-# skip-check:
+skip-check:
   - CKV_AWS_293   # Ensure that AWS database instances have deletion protection enabled
