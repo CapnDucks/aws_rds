@@ -4,12 +4,6 @@ variable "secretsmanager_secret" {
   type        = string
 }
 
-variable "db_name_prefix" {
-  default     = null
-  description = "Database name prefix (conflicts with db_name)."
-  type        = string
-}
-
 variable "db_identifier_prefix" {
   default     = null
   description = "Database identifier prefix."
@@ -128,4 +122,10 @@ variable "region" {
   default     = "us-west-2"
   description = ""
   type        = string
+}
+
+variable "auto_minor_version_upgrade" {
+  default     = null
+  description = ""
+  type        = bool
 }
