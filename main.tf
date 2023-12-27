@@ -28,7 +28,7 @@ resource "aws_db_instance" "this" {
 
   tags = merge(
     {
-      "module"    = "https://git.renaissance.com/tfmodules/s3-bucket.git"
+      "module"    = "https://github.com/CapnDucks/aws_rds"
       "terraform" = "true"
     },
       local.tags,
